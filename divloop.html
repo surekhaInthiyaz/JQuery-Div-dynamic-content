@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<title>jQuery Traversing each</title>
+
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+</head>
+<body>
+<div id="searchFilterOptions">
+    <ul class="nav">
+			<div class="dropdown-filter">
+				
+			</div>		
+	</ul>
+	</div><!-- inner Right side column -->          
+
+
+<script>
+var divValues=["Business Function","Media Type","File Type","Content Type","Use Restriction","Portal Permissions"];
+$.each(divValues, function(index, value){
+			str=divValues[index].replace(' ', '').toLowerCase();
+			spanId= "n_"+str
+			rowId="F"+str;
+			dataFilter=str+"_s"
+	        $(".nav").append(" <div class='dropdown-filter'><li class='dropdown' data-parent='"+divValues[index]+"' data-filter='"+dataFilter+"'><a class='nav-link dropdown-toggle facet-item' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>"+ value+
+			"<span title=' ' id= '"+spanId+"' class='search-filter-icon-notification font-weight-bold'></a></span><form class='dropdown-menu search-filter-options-market px-3 py-4'><div class='form-group'><div class='row' id= '"+rowId+"'></form>");
+			// $(".asset-view-text-title").append("<form>");
+        });
+    
+</script>
+
+</body>
+</html>
+
+
+<!-- <div class="dropdown-filter">
+            <li class="dropdown" data-parent="File Type" data-filter="filetype_s">
+                <a class="nav-link dropdown-toggle facet-item" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    File Type
+                    <span title=" " id="n_filetype" class="search-filter-icon-notification font-weight-bold">10</span>
+                </a>
+                <form class="dropdown-menu search-filter-options-market px-3 py-4">
+
+
+                    <div class="form-group">
+                        <div id="FfileType" class="row">
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </form>
+            </li>
+        </div>-->
